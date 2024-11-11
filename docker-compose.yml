@@ -1,0 +1,17 @@
+services:
+  rust-webserver:
+    build:
+      context: rust-webserver
+      dockerfile: rust.Dockerfile
+    environment:
+      - RUST_LOG=debug
+    ports:
+      - 8080:8080
+    command: /app/target/release/rust-webserver
+  python-webserver:
+    build:
+      context: python-webserver
+      dockerfile: python.Dockerfile
+    ports:
+      - 8081:8081
+    command: fastapi run --port=8081 --workers=1
