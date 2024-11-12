@@ -24,3 +24,13 @@ services:
     ports:
       - 8082:8082
     command: /app/target/release/rust-rwf
+  python-robyn:
+    build:
+      context: python-robyn
+      dockerfile: Dockerfile
+    environment:
+      - ROBYN_HOST=0.0.0.0
+      - ROBYN_PORT=8083
+    ports:
+      - 8083:8083
+    command: python -m robyn main.py
