@@ -1,4 +1,4 @@
-# Python FastAPI v. Rust actix-web
+# Python v. Rust Webservers
 
 Tiny experiment to compare two web frameworks: Python FastAPI and Rust actix-web.
 
