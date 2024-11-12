@@ -6,18 +6,25 @@ Tiny experiment to compare two web frameworks: Python FastAPI and Rust actix-web
 docker compose up --build -d
 ```
 
-Send request to rust server
+Send request to Rust actix-web server
 
 ```bash
 curl http://localhost:8080/rust-adam
 "Hello rust-adam!
 ```
 
-Send request to python server:
+Send request to python FastAPI server:
 
 ```bash
 curl http://localhost:8081/python-adam
 "Hello python-adam!
+```
+
+Send request to Rust rwf server:
+
+```bash
+curl http://localhost:8082/
+<h1>Hey Rwf!</h1>
 ```
 
 ## Memory usage
