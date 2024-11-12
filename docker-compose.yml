@@ -1,17 +1,26 @@
 services:
-  rust-webserver:
+  rust-actix-web:
     build:
-      context: rust-webserver
+      context: rust-actix-web
       dockerfile: rust.Dockerfile
     environment:
       - RUST_LOG=debug
     ports:
       - 8080:8080
     command: /app/target/release/rust-webserver
-  python-webserver:
+  python-fastapi:
     build:
       context: python-webserver
       dockerfile: python.Dockerfile
     ports:
       - 8081:8081
     command: fastapi run --port=8081 --workers=1
+  rust-rwf:
+    build:
+      context: rust-rwf
+      dockerfile: Dockerfile
+    environment:
+      - RUST_LOG=debug
+    ports:
+      - 8082:8082
+    command: /app/target/release/rust-rwf
